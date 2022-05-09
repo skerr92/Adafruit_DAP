@@ -170,7 +170,11 @@ bool Adafruit_DAP_nRF5x::select(uint32_t *found_id) {
     (void)chipvariant;
     strcpy(_variant_name, "nRF51822_XXAC");
     break;
-
+  //------------- nRF52811 -------------//
+  case 0x52811:
+    strcpy(_variant_name, "nRF52811_");
+    strncat(_variant_name, (char *)&chipvariant, 4);
+    break;
   //------------- nRF52832 -------------//
   case 0x52832:
     strcpy(_variant_name, "nRF52832_");
